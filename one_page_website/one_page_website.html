@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/one_page_website.css">
+
     <title>one page website</title>
   </head>
   <body>
@@ -10,21 +11,86 @@
       <a href="#Home">home</a>
       <a href="#Contact">contact</a>
     </nav>
-    <section id="Home">
-      <h1>Welcome to my One Page Website</h1>
-      <p>please fill out the form below</p>
-    </section>
-    <section id="Contact">
-      <img src="img/contactIcon.png" alt="Contact Icon">
-      <form>
-        <input type="text" id="firstName" value="First Name">
-        <input type="text" id="lastName" value="Last Name">
-        <button type="submit" id="sub-btn">Submit</button>
-      </form>
-    </section>
-    <iframe src="testVideo.mp4" width="300px" height="300px"></iframe>
-    <br>
-    <br>
-    <footer>contact me at duncanrobbins19@gmail.com</footer>
+    <video autoplay muted loop id="my_vid">
+        <source src="my_vid.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+      <section id="Home">
+        <h1>Welcome to my One Page Website</h1>
+        <h2>Here is a few pictures of mountains that utilize a lightbox!</h2>
+        <div class="row">
+          <div class="column">
+            <img src="img/pic1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+          </div>
+          <div class="column">
+            <img src="img/pic2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+          </div>
+          <div class="column">
+            <img src="img/pic3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+          </div>
+          <div class="column">
+            <img src="img/pic4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+          </div>
+        </div>
+
+        <div id="myModal" class="modal">
+          <span class="close cursor" onclick="closeModal()">&times;</span>
+          <div class="modal-content">
+
+            <div class="mySlides">
+              <div class="numbertext">picture 1 / 4</div>
+              <img src="img/pic1.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">picture 2 / 4</div>
+              <img src="img/pic2.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">picture 3 / 4</div>
+              <img src="img/pic3.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">picture 4 / 4</div>
+              <img src="img/pic4.jpg" style="width:100%">
+            </div>
+            <!-- arrow keys -->
+            <a class="prev" onclick="plusSlides(-1)">Previous <br> &#10094;</a>
+            <a class="next" onclick="plusSlides(1)">Next <br> &#10095;</a>
+
+            <div class="caption-container">
+              <p id="caption"></p>
+            </div>
+
+
+            <div class="column">
+              <img class="demoh cursor" src="img/pic1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Pic 1 of mountians">
+            </div>
+            <div class="column">
+              <img class="demoh cursor" src="img/pic2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Pic 2 of mountian">
+            </div>
+            <div class="column">
+              <img class="demoh cursor" src="img/pic3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Pic 3 of mountian">
+            </div>
+            <div class="column">
+              <img class="demoh cursor" src="img/pic4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Pic 4 of mountian">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <p>please fill out the form below</p>
+        <img src="img/contactIcon.png" alt="Contact Icon">
+        <form>
+          <input type="text" id="firstName" placeholder="First Name">
+          <input type="text" id="lastName" placeholder="Last Name">
+          <button type="submit" id="sub-btn">Submit</button>
+        </form>
+      </section>
+      <footer>contact me at duncanrobbins19@gmail.com</footer>
+    </div>
   </body>
+      <script src="js/scripts.js"></script>
 </html>
